@@ -1,5 +1,3 @@
-'''python
-
 import numpy as np
 from scipy.stats import norm,multivariate_normal
 from scipy.optimize import fmin_cg
@@ -40,5 +38,3 @@ class GP:
         mean=self.kernel.mean(x)
         vector=np.array([self.kernel.cov(x,xm) for xm in self.X])
         return np.sum(mean+np.dot(np.dot(self.inverted_gram,vector),(self.Y-self.mean_vector)))
-        
-'''
